@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@dragonball/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@dragonball/core-data": ["libs/core-data/src/index.ts"],
+      "@dragonball/core-state": ["libs/core-state/src/index.ts"],
+      "@dragonball/environment": ["libs/environment/src/index.ts"],
+      "@dragonball/material": ["libs/material/src/index.ts"],
+      "@dragonball/ui-login": ["libs/ui-login/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

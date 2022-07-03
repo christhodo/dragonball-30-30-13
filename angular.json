@@ -2,7 +2,13 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "api-interfaces": "libs/api-interfaces",
+    "core-data": "libs/core-data",
+    "core-state": "libs/core-state",
     "dragonball": "apps/dragonball",
-    "dragonball-e2e": "apps/dragonball-e2e"
+    "dragonball-e2e": "apps/dragonball-e2e",
+    "environment": "libs/environment",
+    "material": "libs/material",
+    "ui-login": "libs/ui-login"
   }
 }
