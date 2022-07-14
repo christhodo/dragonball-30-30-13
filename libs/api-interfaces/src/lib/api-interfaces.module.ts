@@ -1,7 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+export interface Saiyan {
+  id: string;
+  name: string;
+  haircolor: string;
+}
 
-@NgModule({
-  imports: [CommonModule],
-})
-export class ApiInterfacesModule {}
+export interface User {
+  email: string;
+  password: string;
+}
+
+export const emptySaiyan = {
+  id: '',
+  name: '',
+  haircolor: '',
+};

@@ -1,0 +1,14 @@
+{
+  "saiyans": [
+    {
+      "id": "1",
+      "name": "Goku",
+      "haircolor": "Black"
+    },
+    {
+      "id": "2",
+      "name": "Vegeta",
+      "haircolor": "Black"
+    }
+  ]
+}
