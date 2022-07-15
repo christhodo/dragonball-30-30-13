@@ -1,1 +1,55 @@
-<p>saiyan-details works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>
+        <span *ngIf="currentSaiyan.id; else elseBlock">{{
+          originalTitle
+        }}</span>
+        <ng-template #elseBlock>Create a Customized Saiyan</ng-template>
+      </h1>
+    </mat-card-title>
+  </mat-card-header>
+  <form
+    [formGroup]="form"
+    #formDirective="ngForm"
+    (ngSubmit)="save(formDirective)"
+  >
+    <mat-card-content>
+      <mat-form-field
+        appearance="outline"
+        class="full-width"
+        floatLabel="always"
+      >
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          placeholder="name"
+          formControlName="name"
+          type="text"
+          name="name"
+        />
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="outline"
+        class="full-width"
+        floatLabel="always"
+      >
+        <mat-label>Haircolor</mat-label>
+        <input
+          matInput
+          placeholder="haircolor"
+          formControlName="haircolor"
+          type="text"
+          name="haircolor"
+        />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-button color="primary">
+        {{ originalTitle ? 'Save' : 'Create' }}
+      </button>
+      <button type="button" mat-button (click)="cancel()">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
