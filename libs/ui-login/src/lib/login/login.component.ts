@@ -5,9 +5,9 @@ import { AuthService, NotificationsService } from '@dragonball/core-data';
 import { User } from '@dragonball/api-interfaces';
 
 @Component({
-  selector: 'dragonball-toolbar',
-  templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss'],
+  selector: 'dragonball-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   userInfo = { email: 'f@f.com', password: 'pass' };

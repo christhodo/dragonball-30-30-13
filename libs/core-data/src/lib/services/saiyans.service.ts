@@ -15,12 +15,12 @@ export class SaiyansService {
     @Inject(SAIYAN_ENVIRONMENT) private environment: SaiyanEnvironment
   ) {}
 
-  getAll() {
+  all() {
     return this.http.get<Saiyan[]>(this.getUrl());
   }
 
-  find(id: string) {
-    return this.http.get<Saiyan>(this.getUrlById(id));
+  getOne(saiyanId: string) {
+    return this.http.get<Saiyan>(this.getUrlById(saiyanId));
   }
 
   create(saiyans: Saiyan) {
