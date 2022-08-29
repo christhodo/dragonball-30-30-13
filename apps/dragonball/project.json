@@ -1,0 +1,93 @@
+{
+  "projectType": "application",
+  "sourceRoot": "apps/dragonball/src",
+  "prefix": "dragonball",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/dragonball",
+        "index": "apps/dragonball/src/index.html",
+        "main": "apps/dragonball/src/main.ts",
+        "polyfills": "apps/dragonball/src/polyfills.ts",
+        "tsConfig": "apps/dragonball/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/dragonball/src/favicon.ico",
+          "apps/dragonball/src/assets"
+        ],
+        "styles": ["apps/dragonball/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/dragonball/src/environments/environment.ts",
+              "with": "apps/dragonball/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "dragonball:build:production"
+        },
+        "development": {
+          "browserTarget": "dragonball:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "dragonball:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/dragonball/**/*.ts",
+          "apps/dragonball/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/dragonball"],
+      "options": {
+        "jestConfig": "apps/dragonball/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
